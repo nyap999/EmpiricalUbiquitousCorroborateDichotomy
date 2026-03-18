@@ -68,215 +68,574 @@
     </div>
     <textarea id="md1" readonly spellcheck="false">#
 
-# 薄膜抵抗材料の日本知財 詳細レポート v1
+# 薄膜抵抗材料の日本知財 詳細レポート v1 付録
 
-## 版情報
-- 作成日: 2026-03-16
-- 版: v1
-- データ基準: `本流61件 + 境界10件`
-- 更新ルール: この詳細レポートは、ユーザーが明示的に更新を指示したときのみ改訂する
-- 文献別の詳述: `2026-03-16_detailed_report_v1_appendix.md` を参照
+## 付録の使い方
+- 各文献について、`発明の名称`, `公開番号`, `会社名`, `年`, `採用材料と狙い`, `効果`, `全体の流れの中での立ち位置` を揃えた。
+- `公開番号` は、手元で追いやすいように `収録公報番号 / 特開表記` を併記した。
+- 効果の定量値は、今回の整理で確認できた範囲のみ記載した。数値がない文献は、Google Patents抄録・本文テキストから読める質的効果を記した。
+- `境界公報` は本流とは分けて末尾にまとめた。
 
-## 0. このレポートの狙い
-- `Ni-Cr系`, `Ta-N系`, `Cr-Si系` を中心に、日本公開公報ベースで「どの材料を、何のために、どう使いこなしてきたか」を立体的に整理する。
-- 文献単位の情報と、材料系全体の流れの間を橋渡しする。
-- 直系薄膜抵抗材料だけでなく、`トリミング`, `保護膜`, `電極`, `下地`, `process_control`, さらに `境界公報` まで含めて、技術トレンドの見落としを減らす。
+## 1. Ni-Cr系
 
-## 1. エグゼクティブサマリー
-- `Ni-Cr系` は最も厚く、1980年代の `低TCR組成窓の探索`、1985年前後の `希土類添加による組成ずれ耐性の獲得`、2005-2008年の `多目的最適化`、2011年以降の `alloy + glass 複合化` という4段階で読むと全体像が整理しやすい。
-- `Ta-N系` は、Ni-CrやCr-Siほど「多元素添加の枝」が太いわけではなく、`N量`, `酸化熱処理`, `積層`, `希ガススパッタ`, `電極込みの合成TCR`, `TaSiN化` という `process-driven` な流れが本質に近い。
-- `Cr-Si系` は、1982年の `Zr/Mo` 添加の初期枝から始まり、1990年代の `実装・加工対策`, `アモルファス化`, `O + B/C/N` などの組成工夫、2000年代の `Cr-Al-Si`, 2010年代以降の `Si-Cr-N layered cancellation`, `Cr-Si-C/N`, `target engineering` へ進む。2020年代も直系開発が続いているのが特徴。
-- `横断技術` は単なる周辺要素ではなく、材料系の実用化条件そのものである。とくに `process_control` は、`後熱処理`, `成膜ガス`, `合成TCR`, `微細加工`, `粉末/ガラス粒径`, `ターゲット内部組織` までつながる。
-- `境界公報` は、本流から少し外れるが将来の派生先を示す。Ni-Crでは `foil`, `current sensing`, `NiCrSiO/Cr built-in resistor`、Ta-Nでは `thermal printhead`、Cr-Siでは `transparent / sensor branch` が見えている。
+### 1980年代
 
-## 2. まず全体をどう読むか
+### `JPS5822379A / 特開昭58-22379`
+- 発明の名称: Target for sputtering
+- 会社名 / 年: TAMA DENKI KOGYO KK / 1983
+- 材料・採用意図: `Ni-Cr-Al-Si` ターゲットを採用し、厳しいスパッタ条件管理なしでも安定な比抵抗と再現性を得ることを狙う。
+- 効果: 定量値は未確認だが、`安定比抵抗` と `再現性向上` が主効果。
+- 立ち位置: Ni-Cr系のかなり早い段階で、材料そのものより `target 側で量産安定化する` 発想を示した初期枝。
 
-### 2.1 時代ごとの主題
-- `1970年代末`
-  - TaN はまず `成膜後の酸化熱処理` でTCRを追い込む。出発点は材料追加より `後処理` にある。
-- `1980年代前半`
-  - Ni-Cr は `Si` や `Al + Si` の狭い組成窓をどう安定利用するかが主題。
-  - Cr-Si はすでに `Zr`, `Mo` を加えた第三元素枝があり、初期から「二元系をそのまま使う」より「第三元素で使いこなす」発想がある。
-  - Ta-N は `Ta2N + alpha-Ta` や `SiO2` を含む積層・後処理で近零TCRを狙う。
-- `1980年代後半`
-  - Ni-Cr では松下系の `La / Sc / Eu` 添加群が現れ、低TCRそのものより `組成ばらつきに対するTCRの鈍感化` が重要テーマになる。
-- `1990年代`
-  - Ta-N は `Ne/Ar/Kr/Xe + N2` の希ガススパッタで真空アニール依存を下げる。
-  - Cr-Si は `Al配線との干渉`, `レーザトリミング`, `接触部ダメージ抑制` など、半導体・実装との界面で使いこなす方向が太い。
-  - Ni-Cr はこの時期の母集団がまだ薄いが、`Ta-Si` や `Al-Si` による安定化枝がつながっている。
-- `2000年代`
-  - Ni-Cr は一気に多枝化し、`rare-earth`, `Ta`, `Ta-Al`, `Ta-Al-Mo`, `Si-C`, `Mn/Fe` などで `高温安定性`, `耐食性`, `高比抵抗`, `鋳造性`, `量産窓` を同時に最適化する。
-  - Ta-N は膜単体ではなく `中間膜・電極まで含めた全体TCR設計` に進む。
-  - Cr-Si は `Cr-Al-Si` や `valve / transition metal` 追加で、抵抗材料としての再設計が進む。
-- `2010年代`
-  - Ni-Cr は `Ni-based + Cr/Al/Y + silicate glass` により、薄膜抵抗材料が `alloy + glass` 複合設計へ再定義される。
-  - Ta-N は `TaSiN` により半導体多層配線との整合を取る。
-  - Cr-Si は `Si-Cr-N` 二層での正負TCR相殺、on-chip抵抗の工程設計が目立つ。
-- `2020年代`
-  - Ni-Cr は `pure SiO2 glass`, `粉末粒径`, `低温熱処理` が前面化し、近年の主戦場は複合抵抗材料。
-  - Cr-Si は `Cr-Si-C`, `Cr-Si-N`, `binary target densification`, `partial crystallization` へ展開し、むしろ活発。
-  - Ta-N は直系の日本公開公報が薄く、代わりに `thermal printhead` など近傍応用へ展開している。
+### `JPS58119601A / 特開昭58-119601`
+- 発明の名称: Resistor
+- 会社名 / 年: Tokyo Sanyo Electric Co Ltd / 1983
+- 材料・採用意図: `Ni-Cr-Si` を採用し、精密薄膜抵抗で `ほぼ零TCR` を狙う。
+- 効果: 抄録レベルでは `near-zero TCR` が主効果で、低TCR精密抵抗の早期実証例とみなせる。
+- 立ち位置: Ni-Cr系の `Si-only low-TCR` 本流の起点に近い文献。
 
-### 2.2 クラスターマップ
-| クラスタ | 代表公報 | 技術的な意味 | 後続へのつながり |
-| --- | --- | --- | --- |
-| Ni-Cr 初期組成窓 | `JPS58119601A`, `JPS5822379A`, `JPS59157282A` | `Si` と `Al + Si` をどう薄膜抵抗へ安定転写するか | 1985年の希土類添加群の前段 |
-| Ni-Cr 希土類安定化 | `JPS6018123B2`, `JPS6018124B2`, `JPS6024562B2`, `JPS6024563B2`, `JPS6024564B2` | 低TCR化よりも `組成ぶれへの耐性` を獲得 | TDK系 `Ni-Cr-Al-Si` の量産窓、2000年代の rare-earth 一般化へ接続 |
-| Ni-Cr 多目的最適化 | `JP2005290401A`, `JP2005294612A`, `JP2006190871A`, `JP2008007810A`, `JP2008010604A`, `JP2006313785A` | `高温安定`, `耐食`, `高比抵抗`, `鋳造性` を同時に解く | alloy+glass 複合枝の前提条件を整備 |
-| Ni-Cr alloy + glass | `JP2011119234A`, `JP5045804B2`, `JP2020007601A`, `JP7087741B2` | 薄膜抵抗材料を `金属合金 + ガラス粉` の複合系として設計 | 2020年代の近年本流 |
-| Ta-N process-driven cluster | `JPS547600A`, `JPH06275409A`, `JPH04223367A` | 後熱処理, 成膜ガス, lift-off でTCRと膜質を制御 | 2000年代のデバイス全体TCR設計へ接続 |
-| Ta-N stack / device integration | `JPH01291401A`, `JP2004342705A`, `JP2013098519A`, `JP5824330B2` | 積層・中間膜・TaSiN化で半導体整合を取る | 直系材料公報減少後の近傍応用へ接続 |
-| Cr-Si 実装・加工対策 | `JPH02271565A`, `JPH0414251A`, `JPH07335831A`, `JP2010278479A` | Al配線, 接触孔, トリミング, dry etch まで含めて使いこなす | layered film と 2020年代 on-chip 材料へ接続 |
-| Cr-Si 組成工学 | `JP2577969B2`, `JPH08264304A`, `JP2002141201A`, `JP2007073651A`, `JP4742758B2` | Ti, O, B/C/N, Al, valve metal で低TCRと安定性を両立 | 2017年以降の stack / phase control の土台 |
-| Cr-Si 2020s target / phase engineering | `JP2023064278A`, `JP7609258B2`, `JP7671225B2`, `JP7676729B2`, `JP7715152B2` | target 割れ抑制, 低粒子化, 部分結晶化, 温度帯別TCR制御 | 2020年代の主戦場 |
-| 境界派生クラスタ | `JP2012212761A`, `JP2022071140A`, `JP7089555B2`, `JP7681003B2`, `JP2025097483A` | 本流の外側で、foil, current sensing, thermal printhead, transparent/sensor へ広がる | 将来の用途分岐の観測点 |
+### `JPS59157282A / 特開昭59-157282`
+- 発明の名称: High electric resistance sputtering target
+- 会社名 / 年: Toyo Soda Manufacturing Co Ltd / 1984
+- 材料・採用意図: `Si 15-30%` の高Si `Ni-Cr` ターゲットで、高抵抗薄膜を形成しやすくする。
+- 効果: `高初期抵抗`, `小TCR`, `高抵抗薄膜への適性` が主効果。
+- 立ち位置: 1980年代Ni-Crの中で、`高Si target` による高面積抵抗化を押し出した枝。
 
-## 3. 材料系ごとの流れ
+### `JPS6016724B2 / 特開昭57-5301`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Si-Sc` を用い、低TCRだけでなく `組成ばらつきに対して安定なTCR` を得る。
+- 効果: 定量値は未確認だが、`低TCR` と `広い組成許容幅` が主効果。
+- 立ち位置: 1985年前後の希土類添加クラスタの中で、`Sc` を使う Si系枝。
 
-### 3.1 Ni-Cr系
-Ni-Cr系は、この調査で最もはっきりとした `世代交代` が見える材料系である。大きく分けると、`初期の組成窓探索`, `希土類による製造安定化`, `2000年代の多目的最適化`, `alloy + glass 複合化` の4相で読むと理解しやすい。
+### `JPS6018123B2 / 特開昭57-5303`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Si-La` により、Si系低TCR枝をより量産安定に使いこなす。
+- 効果: 定量値は未確認だが、`低TCR` と `組成窓の安定化` が効果。
+- 立ち位置: `La` を使う Si系枝で、松下系 rare-earth cluster の中核。
 
-#### 第1相: 1983-1984年の初期組成窓探索
-- `JPS58119601A` は `Ni-Cr-Si` を low-TCR の早期本流として示す。
-- `JPS5822379A` は `Ni-Cr-Al-Si` を target 側から安定利用しようとする。
-- `JPS59157282A` は `高Si Ni-Cr target` という、より高抵抗薄膜へ寄せる枝を見せる。
+### `JPS6018124B2 / 特開昭57-5304`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Al-La` を用い、Al系でも低TCRと製造安定性を両立する。
+- 効果: 定量値は未確認だが、`Al系組成の low-TCR 安定化` が主効果。
+- 立ち位置: `Al系 + rare-earth` の代表で、後の `Ni-Cr-Al-Si` 量産枝や高温安定枝の前提になる。
 
-この段階の主題は、`どの元素を入れるか` そのものより、`狭い組成窓をどう工業的に使える状態にするか` にある。Appendix ではこの相の各文献を、`Si-only low-TCR`, `Al-Si target reproducibility`, `high-Si target` に分けて読むとよい。
+### `JPS6024562B2 / 特開昭57-5306`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Si-Eu` により、Si系 low-TCR をより鈍感な組成窓で使う。
+- 効果: 定量値は未確認だが、`低TCR` と `製造ばらつき耐性` が主効果。
+- 立ち位置: Si系 rare-earth クラスタの一角で、La / Sc / Eu の役割比較に使える。
 
-#### 第2相: 1985年前後の希土類添加クラスタ
-- `La / Sc / Eu` を `Ni-Cr-Al` または `Ni-Cr-Si` に入れた松下系群が中核。
-- ここでの本質は、低TCR値を一度だけ出すことではなく、`組成ぶれに対してTCRが暴れにくい材料系` を作ることにある。
+### `JPS6024563B2 / 特開昭57-5307`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Al-Sc` により、Al系組成の low-TCR 安定化を図る。
+- 効果: 数値は未確認だが、`低TCR` と `組成許容幅の拡大` が主効果。
+- 立ち位置: Al系 rare-earth cluster の `Sc` 枝。
 
-このクラスタは、Ni-Cr系知財の中でも `量産安定化思想` が最もよく見える部分である。Appendix の 1980年代Ni-Cr群では、`JPS6018123B2`, `JPS6018124B2`, `JPS6024562B2`, `JPS6024563B2`, `JPS6024564B2` をひとかたまりとして読むのがよい。
+### `JPS6024564B2 / 特開昭57-5308`
+- 発明の名称: Thin film resistor alloy
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1985
+- 材料・採用意図: `Ni-Cr-Al-Eu` を用い、Al系薄膜抵抗を安定利用する。
+- 効果: 数値は未確認だが、`低TCR` と `量産安定性` が主効果。
+- 立ち位置: Al系 rare-earth cluster の `Eu` 枝で、La / Sc / Eu 比較の3本目。
 
-#### 第3相: 1990年代後半から2008年までの多目的最適化
-- `JPH045241B2`, `JPH0620803A` では `耐湿`, `負荷寿命`, `高温安定`, `量産性` が前面化する。
-- 2005-2008年の住友金属鉱山群では、`rare-earth generalization`, `Al-free castability`, `Ta corrosion branch`, `Ta-Al`, `Ta-Al-Mo`, `Si-C high resistivity` が並立する。
-- この段階では、単一指標の最適化ではなく、`高比抵抗`, `低TCR`, `高温安定`, `耐塩水`, `鋳造性`, `熱処理窓` を同時に解く方向へ移る。
+### `JPS63147305A / 特開昭63-147305`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: TDK Corp / 1988
+- 材料・採用意図: `Ni-Cr-Al-Si` 薄膜で、`高安定`, `低TCR`, `広い面積抵抗域`, `良好な再現性` をまとめて狙う。
+- 効果: 数値は未確認だが、`組成窓の実用化` が主効果。
+- 立ち位置: 1980年代末の `Ni-Cr-Al-Si` 実装枝で、松下系 rare-earth 安定化を受けた `量産設計` 側の整理点。
 
-Ni-Cr系を深く読むなら、この第3相が最重要である。Appendix では 2000年代Ni-Crの各文献を個別に見るだけでなく、`Alを残す枝`, `Alを抜く枝`, `Taを使う枝`, `Ta + Al + Mo枝`, `Si + C枝` として横に比較すると発明意図が見えやすい。
+### 1990年代
 
-#### 第4相: 2011年以降の alloy + glass 複合化
-- `JP2011119234A` と `JP5045804B2` は、Ni-Cr直系というより `Ni-based resistor alloy + glass` へ重心を移す。
-- `JP2020007601A` と `JP7087741B2` では、`pure SiO2 glass`, `Ni合金粉末粒径 >= 30 um`, `ガラス粉 3-20 mass%`, `ガラス粉径 <= 200 um` など、粉末設計そのものが発明要素になる。
+### `JPH045241B2 / 特開昭60-27103`
+- 発明の名称: Thin-film resistor alloy
+- 会社名 / 年: 出願人表示未確定 / 1992
+- 材料・採用意図: `Ni-Cr-Ta-Si` を使い、`小TCR変動`, `耐湿性`, `負荷寿命` を改善する。
+- 効果: 定量値は未確認だが、`熱処理後の安定化` と `信頼性向上` が主効果。
+- 立ち位置: 1990年代Ni-Crで `Ta` を取り込む初期枝として重要。
 
-ここは「Ni-Cr系の終盤」ではなく、「Ni系薄膜抵抗材料の再定義」とみるのがよい。材料名だけ見るとNi-Crの連続性が薄く見えるが、技術思想としては `高比抵抗・高温安定・耐食・低温処理` を Ni系複合材料で引き継いでいる。
+### `JPH0620803A / 特開平6-20803`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: TDK Corp / 1994
+- 材料・採用意図: `Ni-Cr-Al-Si` を用い、`高温安定性`, `抵抗温度特性`, `生産性` を両立する。
+- 効果: 定量値は未確認だが、`再結晶制御` を含む量産適性の改善が効いている。
+- 立ち位置: rare-earth 依存より、`Ni-Cr-Al-Si を工業的に使いこなす` 1990年代の主流枝。
 
-### 3.2 Ta-N系
-Ta-N系の特徴は、Ni-CrやCr-Siのような `多元素添加カタログ` ではなく、`プロセスで追い込む文化` が強いことである。
+### 2000年代
 
-#### 第1相: 後熱処理と積層
-- `JPS547600A` は `酸化雰囲気熱処理` によりTCRを最小化する初期知財。
-- `JPS5931239B2` は `SiO2 overlayer` を含む後処理・信頼性の枝。
-- `JPH01291401A` は `Ta2N + alpha-Ta` の正負TCR相殺という積層思想を示す。
+### `JP2000182802A / 特開2000-182802`
+- 発明の名称: Resistance material
+- 会社名 / 年: Akita Prefecture / 2000
+- 材料・採用意図: `Ni-Cr + Al/Si group + Mn/Fe group` を使い、広温度域でTCRをゼロ近傍に平坦化する。
+- 効果: `広温度域で near-zero TCR` を狙う点が特徴で、登録側では `約±2 ppm/C` 級の表現が見える。
+- 立ち位置: Ni-Cr系の中で `多元系平坦化` を前面に出す枝。
 
-この相では、材料添加よりも `相構成` と `後処理` が核心である。
+### `JP2005290401A / 特開2005-290401`
+- 発明の名称: Resistive thin film sputtering target material and resistive thin film resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2005
+- 材料・採用意図: `Ni-Cr-Al-Si + rare earth` を用い、厳しい環境でも near-zero TCR と高温安定性を得る。
+- 効果: 定量値は未確認だが、`Y / La / Ce / misch metal` まで含めて rare-earth を一般化した点が重要。
+- 立ち位置: 2005-2008住友群の出発点で、rare-earth を再び主役に戻した枝。
 
-#### 第2相: 1990年代の process control
-- `JPH06275409A` は `Ne/Ar/Kr/Xe + N2` と逆スパッタ条件で真空アニールなしの近零TCRを狙う。
-- `JPH04223367A` は TaN 薄膜の `lift-off patterning` による膜厚均一性と所定抵抗値確保を示す。
+### `JP2005294612A / 特開2005-294612`
+- 発明の名称: Resistive thin film sputtering target material and resistive thin film resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2005
+- 材料・採用意図: `Ni-Cr-Si + rare earth` として `Alを抜き`, near-zero TCR と高温安定性を狙う。
+- 効果: 定量値は未確認だが、`鋳造性 / target 生産性の改善` が重要効果。
+- 立ち位置: 住友群の中で `Al-free` に明確な意味を与えた枝。
 
-ここでTa-Nは、単に膜そのものを変えるのではなく、`どう形成するか` に重心を移す。
+### `JP2006190871A / 特開2006-190871`
+- 発明の名称: Resistive thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2006
+- 材料・採用意図: `Ni-Cr-Ta` を用い、`塩素`, `人工汗液` などへの耐食性を上げつつ Ni-Cr相当のTCRを維持する。
+- 効果: 数値は未確認だが、`耐食性` を主指標に据えたことが特徴。
+- 立ち位置: 住友群の `Ta-only corrosion branch`。
 
-#### 第3相: デバイス全体との整合
-- `JP2004342705A` は `N分圧 + Ti中間膜 + Au電極` を一体で見て、接触抵抗込みの合成TCRを制御する。
-- `JP2013098519A` と `JP5824330B2` は `TaSiN` により、半導体多層配線に載る高抵抗・低TCR材料へ進む。
+### `JP2006313785A / 特開2006-313785`
+- 発明の名称: Resistive thin-film sputtering target material and resistive thin-film resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2006
+- 材料・採用意図: `Ni-Cr-Si-C` を採用し、高比抵抗と小TCRを同時に得る。
+- 効果: `500-3000 uohm*cm`, `TCR -25 to +25 ppm/C` が示されており、この群では比較的定量的。
+- 立ち位置: Ni-Crで `C添加` を主役にした高比抵抗枝。
 
-この系では、材料トレンドを読むときに `膜単体` だけ見ると誤る。Appendix の Ta-N群では、`後熱処理`, `stack`, `gas control`, `whole-device TCR`, `TaSiN integration` の5テーマに分けて読むのが有効である。
+### `JP3852446B2 / 特開2005-154884`
+- 発明の名称: Resistive thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2006
+- 材料・採用意図: `Ni-Cr-Al + rare earth` を用い、175C級での高温安定性を従来 `Ni-Cr-Al-Si` より高める。
+- 効果: 数値は未確認だが、`175C級安定性` が差別化点。
+- 立ち位置: 住友群の rare-earth branch を登録公報側から裏づける文献。
 
-### 3.3 Cr-Si系
-Cr-Si系は、今回の調査で `2020年代も太い` ことが確認できた系である。Ni-Crに比べると、`実装や加工と一体で最適化する傾向` が一貫して強い。
+### `JP2008007810A / 特開2008-7810`
+- 発明の名称: Resistive thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2008
+- 材料・採用意図: `Ni-Cr-Ta-Al` により、耐塩水性と高温安定性を両立する。
+- 効果: `TCR -25 to +25 ppm/C`, `155C 高温安定`, `塩水耐性` が主効果。
+- 立ち位置: `Ta-only` から `Ta + Al` へ進んだ中間枝。
 
-#### 第1相: 1982年の第三元素枝
-- `JPS574102A` の `Zr`、`JPS577102A` の `Mo` は、Cr-Siが初期から `第三元素を前提に使いこなす` 系だったことを示す。
+### `JP2008010604A / 特開2008-10604`
+- 発明の名称: Resistive thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2008
+- 材料・採用意図: `Ni-Cr-Ta-Al-Mo` により、表面酸化膜制御を含めて高比抵抗・耐食・広い熱処理窓を取る。
+- 効果: 定量値は未確認だが、`高比抵抗`, `耐塩水`, `熱処理窓拡大` が主効果。
+- 立ち位置: 住友群の中でも `最も多目的最適化が進んだ枝` の一つ。
 
-#### 第2相: 1990年代の実装・加工・アモルファス化
-- `JPH02271565A` はレーザトリミングで on-chip 基準調整へ使う枝。
-- `JPH0414251A` は Al配線熱履歴による抵抗低下を `抵抗体形状` で抑える枝。
-- `JPH07120573B2` は二元Cr-Siのアモルファス安定化。
-- `JPH08264304A` は `O + B/C/N` により `±100 ppm/K` 級の low-TCR を狙う。
-- `JP2577969B2` は `Ti 2-15 wt%` によるクロムシリサイド形成抑制とアモルファス安定化。
+### 2010年代
 
-この相は、Cr-Siの使いこなしが `材料組成` と `加工・実装適合` の両輪で進むことを示している。
+### `JP2011119234A / 特開2011-119234`
+- 発明の名称: Resistor material and resistor
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2011
+- 材料・採用意図: `Ni-based resistor alloy + Cr/Al/Y + silicate glass` を用い、比較的低温熱処理でも高比抵抗・良好TCR・高温安定・耐塩水性を得る。
+- 効果: 数値は未確認だが、`低温熱処理適合` と `複合材料化` が主効果。
+- 立ち位置: Ni-Cr系を `alloy + glass` 複合設計へ移した転換点。
 
-#### 第3相: 2000年代の再構成
-- `JP2002141201A` は `valve metal / transition metal` を足して高抵抗・低コスト化を図る。
-- `JP2007073651A` / `JP4742758B2` は `Cr-Al-Si + oxygen anneal` により高比抵抗・低TCR・耐熱をまとめて狙う。
+### `JP4752075B2 / 特開2000-182802`
+- 発明の名称: Resistance material
+- 会社名 / 年: Akita Prefecture / 2011
+- 材料・採用意図: `Ni-Cr-Al-Mn` 系として、広温度域のTCR平坦化を登録公報側から裏づける。
+- 効果: `約±2 ppm/C` 級の広温度域TCR平坦化が読み取れる。
+- 立ち位置: 2000年公開群の登録側で、`Mn` 添加の意味をはっきりさせる文献。
 
-#### 第4相: 2010年代以降の stack / phase / target engineering
-- `JP2010278479A` は `CrSi target + N2 + via/contact design` で on-chip抵抗を工程ごと設計する。
-- `JP2017022176A` は `Si-Cr-N` 二層で正負TCRを相殺する。
-- `JP7609258B2` は `Cr-Si-N` の温度帯別TCR設計。
-- `JP7671225B2` は `Cr-Si-C` の `部分結晶化` による混相設計。
-- `JP2023064278A`, `JP7676729B2`, `JP7715152B2` は target 側の `クラック`, `密度`, `粒子`, `相分率` を制御し、低TCR膜へつなぐ。
+### `JP5045804B2 / 特開2011-119234`
+- 発明の名称: Resistor material and resistor
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2012
+- 材料・採用意図: `Ni-based alloy + silicate glass` の複合抵抗材料を登録公報側で固める。
+- 効果: 定量値は未確認だが、`高比抵抗`, `高温安定`, `低温側プロセス適合` の継続性を示す。
+- 立ち位置: `JP2011119234A` の登録側で、alloy+glass branch の本流性を裏づける。
 
-Cr-Si系は、材料そのものだけでなく `target engineering` が知財の主戦場になっている点で、2020年代の読み応えがある。
+### 2020年代
 
-### 3.4 横断技術と境界公報
-横断技術は、材料系の補助ではなく実用化条件である。
+### `JP2020007601A / 特開2020-7601`
+- 発明の名称: Resistor material and resistor
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2020
+- 材料・採用意図: `Ni-based resistor alloy + Cr/Al/Y + pure SiO2 glass` を用い、低温熱処理でも高比抵抗と高温安定性を得る。
+- 効果: `Ni合金粉末 >= 30 um`, `ガラス 3-20 mass%`, `ガラス粉径 <= 200 um` の条件が明示され、粉末設計が実質的な効果源になっている。
+- 立ち位置: 2020年代Ni系本流であり、`合金設計 + ガラス設計 + 粉末粒径設計` へ進んだ枝。
 
-- `trimming`
-  - `JPH03173101A` は `Ta2N meander + NiCr trim pad` という hybrid 調整思想を示す。
-  - `JP2010062407A` はレーザトリミング後の樹脂保護膜密着まで含める。
-- `underlayers / interfaces`
-  - `JPH05135904A` は `Al拡散界面` による polyimide 密着改善を示し、薄膜抵抗が下地層設計と不可分であることを示す。
-- `electrodes / passivation`
-  - `JP2009194129A`, `JP2020013804A` は接続穴や二層保護膜で精度と信頼性を維持する。
-- `process_control`
-  - `JPH04223367A`, `JPH07335831A`, `JP2009099755A` は、微細加工シーケンス自体が性能知財であることを示す。
+### `JP7087741B2 / 特開2020-7601`
+- 発明の名称: Resistor material and resistor
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2022
+- 材料・採用意図: `JP2020007601A` の登録公報として、SiO2 glass 複合枝を定着させる。
+- 効果: 定量値は未確認だが、`より低温プロセスで高比抵抗・高温安定` という方向性が明確。
+- 立ち位置: alloy+glass branch が 2020年代も継続していることを示す確証。
 
-境界公報は Appendix の末尾で別建てにした。これは、本流から外すことで見通しを良くしつつ、派生用途を将来追跡できるようにするためである。Ni-Cr系の `foil / current sensing / built-in resistor on foil`、Ta-N系の `thermal printhead`、Cr-Si系の `transparent / sensor branch` は、将来のレポート改訂で本流化する可能性がある。
+## 2. Ta-N系
 
-## 4. 全体の流れと文献単位の読み方をどうつなぐか
+### pre1980
 
-### 4.1 まず「何を足したか」だけで読まない
-- Ni-Cr の `La / Sc / Eu` は、単なる添加元素リストではなく `組成ばらつき耐性` の知財として読む。
-- Cr-Si の `Ti`, `O`, `B/C/N`, `Al`, `C`, `N` は、相安定化, トリミング適性, on-chip整合, target 側安定化など役割が異なる。
-- Ta-N は、むしろ `何を足したか` より `どの相・どの工程・どの層構成で追い込んだか` が重要。
+### `JPS547600A / 特開昭54-7600`
+- 発明の名称: Tantalum nitride thin-film resistor and its manufacture
+- 会社名 / 年: NEC Corp / 1979
+- 材料・採用意図: `TaN` 薄膜を成膜後に `酸化雰囲気熱処理` し、TCRを最小化する。
+- 効果: 近零TCR化を後処理で実現する点が主効果で、数値は未確認。
+- 立ち位置: Ta-N系の最初期本流で、`材料追加ではなく後処理で追い込む` 文化の出発点。
 
-### 4.2 材料系ごとの主たる発明軸
-| 系 | 主たる発明軸 | 典型文献 |
-| --- | --- | --- |
-| Ni-Cr | 組成窓安定化, 希土類安定化, 耐食/高温/鋳造性の同時最適化, alloy+glass 複合化 | `JPS6018124B2`, `JP2005294612A`, `JP2008010604A`, `JP2020007601A` |
-| Ta-N | 後熱処理, 積層, 希ガススパッタ, 合成TCR, TaSiN化 | `JPS547600A`, `JPH01291401A`, `JPH06275409A`, `JP2004342705A`, `JP2013098519A` |
-| Cr-Si | 第三元素添加, 実装・加工対策, stack cancellation, target/phase engineering | `JP2577969B2`, `JPH0414251A`, `JP2017022176A`, `JP7671225B2`, `JP7715152B2` |
+### 1980年代
 
-### 4.3 Appendix の使い方
-- `まず本体で大きな流れを掴む`
-- `次に Appendix で該当クラスタの文献を年代順に見る`
-- `そのあと pdf フォルダへ戻る`
+### `JPS55121606A / 特開昭55-121606`
+- 発明の名称: Thin-film resistor
+- 会社名 / 年: Fujitsu Ltd / 1980
+- 材料・採用意図: タイトルOCRから `TaAlN/TaN family` と読める薄膜抵抗で、TCR制御を狙う。
+- 効果: OCR制約が強く定量値は未確認だが、Ta-N系のTCR調整枝として扱える。
+- 立ち位置: Ta-N と Ta-Al-N の境界にある可能性があるため、Appendix では仮置き的に扱う。
 
-とくに Appendix では、各文献ごとに
-- 発明の名称
-- 公開番号 `JPS... / 特開...`
-- 会社名 / 年
-- 採用材料と狙い
-- 効果
-- 全体の流れの中での立ち位置
+### `JPS5931239B2 / 特開昭50-80477`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: Nippon Electric Co Ltd / 1984
+- 材料・採用意図: `TaN + SiO2 overlayer` と熱処理で TCR と信頼性を改善する。
+- 効果: 数値は未確認だが、`TCR改善` と `信頼性向上` が主効果。
+- 立ち位置: `酸化熱処理` の初期系を、保護・後処理込みで再構成した枝。
 
-を一つずつ揃えた。これにより、`全体トレンド -> 個別公報 -> 原文PDF` の順で見返しやすくしている。
+### `JPH01291401A / 特開平1-291401`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: FDK Corp / 1989
+- 材料・採用意図: `Ta2N + alpha-Ta` の積層で、正負TCRを相殺して近零TCRを得る。
+- 効果: `near-zero TCR` が主効果で、積層設計による TCR cancellation を示す。
+- 立ち位置: Ta-N系の中で `stack design` が主役になることを明確にした文献。
 
-## 5. 現時点で厚い部分と、まだ薄い部分
-- 厚い部分
-  - `Ni-Cr 1980s`, `Ni-Cr 2000s`
-  - `Cr-Si 1990s`, `Cr-Si 2020s`
-  - `process_control` の年代別整理
-- 薄い部分
-  - `Ta-N 2020s` の直系日本公開公報
-  - `Ni-Cr 1990s` の母集団
-  - `Cr-Si 2000s` の中継区間
+### 1990年代
 
-したがって、このv1を読むときは、
-- `Ni-Cr`: かなり本流が見えている
-- `Cr-Si`: 2020年代まで含めて流れが読める
-- `Ta-N`: 方向性は読めるが、近年件数はまだ薄い
+### `JPH06275409A / 特開平6-275409`
+- 発明の名称: Thin film resistor and manufacture thereof
+- 会社名 / 年: Fujitsu Ltd / 1994
+- 材料・採用意図: `TaN` を `Ne/Ar/Kr/Xe + N2` 雰囲気でスパッタし、逆スパッタRF条件も使ってTCRを合わせる。
+- 効果: `真空アニールなしで 0 ppm/C 近傍` を狙う点が重要。
+- 立ち位置: Ta-N系の `process-driven control` を代表する文献。
 
-という前提で解釈するとよい。
+### 2000年代
 
-## 6. 結論
-- 薄膜抵抗材料の日本知財は、単純な「材料名の履歴」ではなく、`組成窓`, `相制御`, `工程`, `電極/保護膜/下地`, `ターゲット`, `粉末粒径`, `複合化` の歴史として読むべきである。
-- `Ni-Cr` は `量産安定化 -> 多目的最適化 -> 複合材料化`、`Ta-N` は `process-driven control -> stack/device integration`、`Cr-Si` は `第三元素化 -> 実装適合 -> stack/target/phase engineering` という形で理解すると、個別公報の位置づけが崩れにくい。
-- 文献単位の詳細は Appendix に整理したので、次の精査では、関心のあるクラスタからPDF原文へ降りる使い方を推奨する。
+### `JP2004342705A / 特開2004-342705`
+- 発明の名称: Thin film resistor element and manufacturing method thereof
+- 会社名 / 年: Cimeo Precision Co Ltd / 2004
+- 材料・採用意図: `TaN` に `N量`, `Ti中間膜`, `Au電極` を組み合わせ、接触抵抗まで含めた全体TCRを下げる。
+- 効果: 数値は未確認だが、`whole-device TCR compensation` が主眼。
+- 立ち位置: Ta-Nを `膜単体` から `デバイス全体` で設計する段階へ進めた文献。
+
+### 2010年代
+
+### `JP2013098519A / 特開2013-98519`
+- 発明の名称: Semiconductor device and method for manufacturing the same
+- 会社名 / 年: Renesas Electronics Corp / 2013
+- 材料・採用意図: `TaSiN` 抵抗層を用い、多層配線の中で高抵抗・低TCRを実現する。
+- 効果: 数値は未確認だが、`半導体多層配線との整合` が大きい。
+- 立ち位置: Ta-N から `TaSiN` へ進む半導体寄り本流。
+
+### `JP5824330B2 / 特開2013-98519`
+- 発明の名称: Semiconductor device and method for manufacturing the same
+- 会社名 / 年: Renesas Electronics Corp / 2015
+- 材料・採用意図: `TaSiN` 抵抗層を登録公報側で確定し、高抵抗・低TCRの半導体内蔵抵抗を維持する。
+- 効果: 具体値は未確認だが、TaSiN branch の継続性を担保する。
+- 立ち位置: Ta-N本流が `TaSiN semiconductor integration` へ移ったことを示す文献。
+
+## 3. Cr-Si系
+
+### 1980年代
+
+### `JPS574102A / 特開昭57-4102`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1982
+- 材料・採用意図: `Cr-Si-Zr` により、Cr-Si系薄膜抵抗を第三元素で使いこなす。
+- 効果: 旧公報OCR制約で定量値は未確認だが、初期から第三元素化が意識されていたことが重要。
+- 立ち位置: Cr-Si本流の最初期にある `Zr枝`。
+
+### `JPS577102A / 特開昭57-7102`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: Matsushita Electric Industrial Co Ltd / 1982
+- 材料・採用意図: `Cr-Si-Mo` により、Cr-Siを第三元素で安定化する。
+- 効果: 数値は未確認だが、`Mo枝` として Zr枝との比較が可能。
+- 立ち位置: 初期Cr-Siで `第三元素化` がすでに複数案あったことを示す。
+
+### 1990年代
+
+### `JPH02271565A / 特開平2-271565`
+- 発明の名称: Semiconductor device
+- 会社名 / 年: NipponDenso Co Ltd / 1990
+- 材料・採用意図: `Cr-Si` をレーザトリミング可能な on-chip 抵抗として使い、樹脂封止下で基準調整に使う。
+- 効果: 定量値は未確認だが、`trimmable on-chip resistor` としての実装性が主効果。
+- 立ち位置: Cr-Si系が `半導体調整用途` へ接続する早期事例。
+
+### `JPH0414251A / 特開平4-14251`
+- 発明の名称: Thin film resistor and manufacture thereof
+- 会社名 / 年: Fuji Electric Co Ltd / 1992
+- 材料・採用意図: `Cr-Si` 抵抗体形状を工夫し、400C級プロセスでの Al拡散による抵抗低下を抑える。
+- 効果: 数値は未確認だが、`高温プロセス中の抵抗変動抑制` が主効果。
+- 立ち位置: Cr-Siの本質が `材料 + 実装界面` にあることをよく示す文献。
+
+### `JPH07120573B2 / 特開昭63-229802`
+- 発明の名称: Thin-film resistor alloy
+- 会社名 / 年: Kamaya Electric Co Ltd / 1995
+- 材料・採用意図: 二元 `Cr-Si` のアモルファス安定化で、広温度域の小TCRと長期安定を狙う。
+- 効果: 数値は未確認だが、`small TCR over wide temperature range` と `長期安定` が主効果。
+- 立ち位置: 多元素化一辺倒ではなく、`二元アモルファス化` という別ルートを示す。
+
+### `JPH08264304A / 特開平8-264304`
+- 発明の名称: Resistance material for a resistance layer
+- 会社名 / 年: Fraunhofer Gesellschaft zur Foerderung der Angewandten Forschung eV; Philips Electronics NV / 1996
+- 材料・採用意図: `Cr-Si-O-(B/C/N)` により low-TCR 化を図る。
+- 効果: `±100 ppm/K` 付近の minimum TCR が示唆される。
+- 立ち位置: `O` と軽元素を含む reactive composition tuning の代表。
+
+### `JP2577969B2 / 特開平2-71501`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: Toyota Central R&D Labs Inc / 1997
+- 材料・採用意図: `Cr-Si-Ti` とし、クロムシリサイド形成を抑えてアモルファス安定化し、高シート抵抗・低TCR・耐熱を狙う。
+- 効果: `Ti 2-15 wt%` の範囲が重要で、IC工程適合性が高い。
+- 立ち位置: Cr-Si系の中で `Ti添加` を定番化する重要文献。
+
+### 2000年代
+
+### `JP2002141201A / 特開2002-141201`
+- 発明の名称: Resistance film material and resistor
+- 会社名 / 年: Koa Corp / 2002
+- 材料・採用意図: `Cr-Si + valve metal / transition metal` により、高抵抗・安定温特・低コストを狙う。
+- 効果: 定量値は未確認だが、`高抵抗と量産性` の両立が主眼。
+- 立ち位置: Cr-Siを `第三元素追加で設計し直す` 2000年代の代表。
+
+### `JP2007073651A / 特開2007-73651`
+- 発明の名称: Resistance thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2007
+- 材料・採用意図: `Cr-Al-Si` 三元化と酸素含有雰囲気アニールで、高比抵抗・低TCR・低熱変化を狙う。
+- 効果: 数値は未確認だが、`三元化 + 酸素アニール` が特徴。
+- 立ち位置: Cr-Siを住友系が `Cr-Al-Si` へ展開する起点。
+
+### 2010年代
+
+### `JP2010278479A / 特開2010-278479`
+- 発明の名称: Semiconductor device
+- 会社名 / 年: Ricoh Co Ltd / 2010
+- 材料・採用意図: `CrSi target + N2 reactive sputter` と `接続孔設計` を組み合わせ、高シート抵抗・高安定の on-chip 抵抗を作る。
+- 効果: 数値は未確認だが、`via/contact design` まで含むことが差別化点。
+- 立ち位置: Cr-Si系の `process-aware` な on-chip branch。
+
+### `JP4742758B2 / 特開2007-73651`
+- 発明の名称: Resistance thin film sputtering target material and resistor element
+- 会社名 / 年: Sumitomo Metal Mining Co Ltd / 2011
+- 材料・採用意図: `Cr-Al-Si` 枝を登録公報側で確定する。
+- 効果: 高比抵抗・低TCR・高耐熱という質的効果が継続している。
+- 立ち位置: `JP2007073651A` の登録側で、Cr-Al-Si branch の本流性を裏づける。
+
+### `JP2017022176A / 特開2017-22176`
+- 発明の名称: Resistor material and resistor
+- 会社名 / 年: Koa Corp / 2017
+- 材料・採用意図: `Si-Cr-N` 二層で正負TCRを相殺し、ミニチュア抵抗でも高抵抗と低TCRを両立する。
+- 効果: 数値は未確認だが、`layered TCR cancellation` が核。
+- 立ち位置: 2010年代Cr-Siの `film stack 設計` を代表する文献。
+
+### 2020年代
+
+### `JP2023064278A / 特開2023-64278`
+- 発明の名称: Chromium silicide sintered body and method for producing thin film resistor element
+- 会社名 / 年: Mitsubishi Materials Corp / 2023
+- 材料・採用意図: `Cr-Si-C` 側の target engineering により、ターゲット割れを抑えつつ安定にCrSi抵抗膜を作る。
+- 効果: 定量値は未確認だが、`crack suppression` が主効果。
+- 立ち位置: 2020年代の Cr-Si が `膜組成` だけでなく `target 側知財` へ重心移動していることを示す。
+
+### `JP7609258B2 / 再公表WO2022/210428`
+- 発明の名称: Chromium silicide-based thin film resistor and manufacturing method thereof
+- 会社名 / 年: Tosoh Corp / 2025
+- 材料・採用意図: `Cr-Si-N` 系で、40-150C域の小TCRと高温安定を両立する。
+- 効果: `40-150C` の温度帯を意識した TCR 設計がポイント。
+- 立ち位置: 2020年代の `temperature-band-specific TCR design` を示す文献。
+
+### `JP7671225B2 / 特開2023-56630`
+- 発明の名称: Resistance material, resistance element and method for manufacturing resistance element
+- 会社名 / 年: Renesas Electronics Corp / 2025
+- 材料・採用意図: `Cr-Si-C` を部分結晶化し、正TCR結晶相と負TCR非晶質相を共存させて高比抵抗・小TCRを狙う。
+- 効果: 定量値は未確認だが、`mixed crystal/amorphous structure` そのものが効果源。
+- 立ち位置: 2020年代Cr-Siの `phase engineering` の代表。
+
+### `JP7676729B2 / 特開2020-203821`
+- 発明の名称: Cr-Si sintered body
+- 会社名 / 年: Tosoh Corp / 2025
+- 材料・採用意図: binary `Cr-Si` target の密度・粒度・酸素量を制御し、高強度 target と安定成膜を得る。
+- 効果: `CrSi2 >= 60 wt%`, `density >= 95%`, `oxygen <= 1 wt%`, `grain size <= 60 um` がキーパラメータ。
+- 立ち位置: 2020年代でも `binary branch` が target engineering により延命していることを示す。
+
+### `JP7715152B2 / 再公表WO2022/25033`
+- 発明の名称: Cr-Si-C sintered body
+- 会社名 / 年: Tosoh Corp / 2025
+- 材料・採用意図: `Cr-Si-C` target を用い、低粒子で low-TCR 膜を形成する。
+- 効果: `C 1-20 wt%`, `Si 20-70 wt%`, `relative density >= 90%` が主要条件。
+- 立ち位置: `Cr-Si-C target -> low-TCR film` の直接的な 2020年代本流。
+
+## 4. 横断技術
+
+### 1990年代
+
+### `JPH03173101A / 特開平3-173101`
+- 発明の名称: Thin film resistor
+- 会社名 / 年: FDK Corp / 1991
+- 材料・採用意図: `Ta2N` で主抵抗を持たせ、`NiCr` pad を直列に置いて細かくレーザ調整する。
+- 効果: `TCR` と `aging change` を下げつつ fine trim できる。
+- 立ち位置: `異材ハイブリッドで trimming を行う` 横断技術の代表。
+
+### `JPH04223367A / 特開平4-223367`
+- 発明の名称: Manufacture of thin film resistor
+- 会社名 / 年: Murata Manufacturing Co Ltd / 1992
+- 材料・採用意図: `TaN` 抵抗膜を sacrificial metal film 上まで全面成膜し、後で `lift-off` して膜厚均一性と所定抵抗を得る。
+- 効果: `uniform thickness` と `prescribed resistance` が主効果。
+- 立ち位置: 1990年代 `process_control` の中でも `microfabrication sequence` を前面に出す文献。
+
+### `JPH05135904A / 特開平5-135904`
+- 発明の名称: Thin film resistor, method of manufacturing the same, and multilayer circuit board incorporating the same
+- 会社名 / 年: Hitachi Ltd / 1993
+- 材料・採用意図: `Al拡散界面 / その酸化層` を使って polyimide との密着を高める。
+- 効果: `高歩留まり`, `高信頼性` が主効果。
+- 立ち位置: 下地・界面設計が薄膜抵抗の信頼性を左右することを示す。
+
+### `JPH07335831A / 特開平7-335831`
+- 発明の名称: Method of manufacturing semiconductor device having thin film resistor
+- 会社名 / 年: NipponDenso Co Ltd / 1995
+- 材料・採用意図: `CrSiN` 抵抗膜と `TiW barrier` を、contact hole 形成後に積み、chemical dry etch で接触部を傷めず加工する。
+- 効果: `工程簡略化` と `contact area damage suppression` が主効果。
+- 立ち位置: `process_control` と `Cr-Si実装系` の橋渡し文献。
+
+### 2000年代
+
+### `JP2009099755A / 特開2009-99755`
+- 発明の名称: Thin-film resistor, and its manufacturing method
+- 会社名 / 年: Seiko NPC Corp / 2009
+- 材料・採用意図: 抵抗膜を傷めない patterning sequence を採用し、ミニチュア化しても抵抗値制御性を保つ。
+- 効果: `miniaturization` と `damage-free controllability` が主効果。
+- 立ち位置: 2000年代 `process_control` の中心文献。
+
+### `JP2009194129A / 特開2009-194129`
+- 発明の名称: Method for manufacturing thin film chip resistor
+- 会社名 / 年: Panasonic Corp / 2009
+- 材料・採用意図: 薄膜上面電極と導電樹脂上面電極を接続穴で接続し、高精度トリミングと工数低減を両立する。
+- 効果: `高抵抗精度`, `低工数`, `低コスト` が主効果。
+- 立ち位置: 電極・接続設計がトリミング精度に効くことを示す横断文献。
+
+### 2010年代
+
+### `JP2010062407A / 特開2010-62407`
+- 発明の名称: Method for manufacturing thin-film chip resistor
+- 会社名 / 年: Panasonic Corp / 2010
+- 材料・採用意図: トリミング溝に加えてダミーパターンへレーザ照射し、樹脂保護膜密着を改善する。
+- 効果: `resin protective film adhesion` と `reliability` の改善が主効果。
+- 立ち位置: trimming と passivation を一体で扱う文献。
+
+### 2020年代
+
+### `JP2020013804A / 特開2020-13804`
+- 発明の名称: Chip resistor
+- 会社名 / 年: Panasonic Intellectual Property Management Co Ltd / 2020
+- 材料・採用意図: 二層保護膜と端面近傍の上面電極露出長制御で、クラックと応力集中を抑える。
+- 効果: `crack suppression` が主効果。
+- 立ち位置: 2020年代横断技術で、保護膜と電極の幾何設計が中心になることを示す。
+
+## 5. その他の材料系
+
+### 1980年代
+
+### `JPS5694602A / 特開昭56-94602`
+- 発明の名称: Chrome tantalum thin film resistor
+- 会社名 / 年: TAISEI KOKI KK / 1981
+- 材料・採用意図: `Cr-Ta` を使い、TaNのような active-gas control なしに低抵抗・低TCR・高安定を狙う。
+- 効果: `low resistance`, `low TCR`, `excellent stability` が主効果。
+- 立ち位置: Ta-N代替の隣接系として重要。
+
+### 1990年代
+
+### `JPH06158272A / 特開平6-158272`
+- 発明の名称: Resistance film and production thereof
+- 会社名 / 年: Ulvac Inc / 1994
+- 材料・採用意図: `Ti-Zr range transition metal + Si` を `C/N atmosphere` で成膜し、高比抵抗膜を得る。
+- 効果: `thin film resistor / thermal head` の両用途に使える高比抵抗膜が主効果。
+- 立ち位置: 主3系の外側にあるが、`遷移金属-Si-C/N` という比較軸を与える。
+
+### 2000年代
+
+### `JP3664655B2 / 特開2001-332402`
+- 発明の名称: High resistivity material and manufacturing method thereof
+- 会社名 / 年: Susumu Co Ltd / 2005
+- 材料・採用意図: `Al-B-Cr-Si` を還元雰囲気アニールで制御し、高比抵抗と小絶対TCRを狙う。
+- 効果: 数値は未確認だが、`conventional high-resistance films より小さい絶対TCR` が主張される。
+- 立ち位置: Cr-Si隣接だが、独立系として整理した方が見通しが良い四元系。
+
+## 6. 境界公報
+
+### Ni-Cr関連
+
+### `JPS58153752A / 特開昭58-153752`
+- 発明の名称: Ni-cr alloy material
+- 会社名 / 年: Unitika Ltd / 1983
+- 材料・採用意図: `Ni-Cr` に `Al` または `Si`、さらに `Fe / Co / Nb / Ta / V / Mo / Mn / Ti / Zr / Ce / Y` などを加える広範な高抵抗合金設計。
+- 効果: 薄膜抵抗専用ではないが、`高抵抗合金` の幅広い設計空間を提示する。
+- 立ち位置: Ni-Cr本流より `広用途高抵抗合金` に近いが、後年の添加元素群を読むときの参照点になる。
+
+### `JP2012212761A / 特開2012-212761`
+- 発明の名称: Metal foil with electrical resistance film and manufacturing method therefor
+- 会社名 / 年: JX Nippon Mining and Metals Corp / 2012
+- 材料・採用意図: `NiCrSiO/Cr` または `CrSiO/Cr` 多層抵抗膜を金属箔上に載せ、温度変化に対する抵抗変化が小さい built-in resistor を狙う。
+- 効果: `比較的高抵抗状態でも良好な温度特性` が主効果。
+- 立ち位置: Ni-Cr近傍が `oxide multilayer on foil` へも広がることを示す。
+
+### `JP2022071140A / 特開2022-71140`
+- 発明の名称: Electrolyzed Ni-Cr alloy foil and its manufacturing method and composite members
+- 会社名 / 年: Nippon Steel Stainless Steel Corp / 2022
+- 材料・採用意図: `Ni-Cr alloy foil` を箔材料として作り込み、複合部材へ展開する。
+- 効果: 薄膜抵抗器そのものではないが、Ni-Crが `foil materials` 側で活発なことを示す。
+- 立ち位置: 2020年代Ni-Crが本流外でどこへ広がるかを見る観測点。
+
+### `JP7089555B2 / 特開2022-22737`
+- 発明の名称: Manufacturing method of current detection resistor circuit board and current detection resistor
+- 会社名 / 年: Daido Steel Co Ltd / 2022
+- 材料・採用意図: `Ni-Cr-Mo` 系で低TCR抵抗材料を current sensing resistor に使う。
+- 効果: 数値は未確認だが、`current sensing` 用途で low-TCR が価値になる。
+- 立ち位置: Ni-Crの派生先が `薄膜精密抵抗` だけではないことを示す。
+
+### `JP7552104B2 / 特開2022-22731`
+- 発明の名称: Resistor and its manufacturing method
+- 会社名 / 年: Daido Steel Co Ltd / 2024
+- 材料・採用意図: `Ni-Cr-Mo` 系で高比抵抗・小TCRを狙うが、用途は薄膜抵抗に限定されない。
+- 効果: 定量値は未確認だが、`high resistivity + small TCR` が前面。
+- 立ち位置: current sensing 周辺の Ni-Cr派生枝を補強する。
+
+### broad resistor alloys
+
+### `JPH11193426A / 特開平11-193426`
+- 発明の名称: Electric resistance alloy method of manufacturing the same and sensor device
+- 会社名 / 年: Research Institute for Electromagnetic Materials / 1999
+- 材料・採用意図: 薄膜記載はあるが、主にはセンサ用途の抵抗合金として設計されている。
+- 効果: 薄膜抵抗へ直接ではなく、`broad alloy comparison` 用途で有用。
+- 立ち位置: 主題がセンサ寄りのため境界へ配置。
+
+### `JPH04370901A / 特開平4-370901`
+- 発明の名称: Electric resistance material
+- 会社名 / 年: SUSUMU IND CO Ltd / 1992
+- 材料・採用意図: 薄膜チップ抵抗や感熱用途と接続するが、精密薄膜抵抗主題ではない耐熱抵抗材料。
+- 効果: 定量値は未確認だが、`heat-resistant boundary` として読むのが妥当。
+- 立ち位置: Cr系広義材料の比較対象。
+
+### other boundary
+
+### `JP5880215B2 / 特開2013-211360`
+- 発明の名称: Resistance element manufacturing method resistance element and semiconductor device
+- 会社名 / 年: Seiko Epson Corp / 2016
+- 材料・採用意図: `WSi` 系 integrated resistor を使い、抵抗素子としての半導体内蔵化を狙う。
+- 効果: Ta-N本流ではないが、`integrated resistor` の別解として重要。
+- 立ち位置: Ta-N近傍の代替材料観測点。
+
+### `JP2025097483A / 特開2025-97483`
+- 発明の名称: Chromium silicide film and manufacturing method thereof
+- 会社名 / 年: Tosoh Corp / 2025
+- 材料・採用意図: `Cr-Si-N-O` を含む透明膜・センサー寄り抵抗膜として使う。
+- 効果: 本流薄膜抵抗より `sensor / transparent branch` への広がりを示す。
+- 立ち位置: Cr-Si 2025年の派生先。
+
+### Ta-N related
+
+### `JP7681003B2 / 再公表2021-206169`
+- 発明の名称: Thermal printhead, its manufacturing method, and thermal printer
+- 会社名 / 年: Rohm Co Ltd / 2025
+- 材料・採用意図: Ta系抵抗膜を `thermal printhead` 発熱抵抗体として使う。
+- 効果: 薄膜抵抗器ではないが、Ta系抵抗膜が2020年代にどの応用へ流れているかを示す。
+- 立ち位置: Ta-N 2020年代の `近傍応用` を示す代表的境界公報。
 
 
 #</textarea>

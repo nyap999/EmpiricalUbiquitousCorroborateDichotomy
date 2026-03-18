@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snippets</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.5;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    h1 { margin-bottom: 8px; }
+    h2 {
+      font-size: 18px;
+      margin: 0;
+    }
+    .note {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      box-sizing: border-box;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      tab-size: 2;
+    }
+    button {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Snippets</h1>
+  <p class="note">別端末から開いてコピペする用のページ</p>
+
+  <section class="card">
+    <div class="head">
+      <h2>Markdown</h2>
+      <button onclick="copyText('md1', this)">コピー</button>
+    </div>
+    <textarea id="md1" readonly spellcheck="false"># 注意点
+
+- <スラッシュテキストエリア>だけはエスケープする
+- 他はエスケープ不要
+
+ここまで</textarea>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h2>Shell</h2>
+      <button onclick="copyText('sh1', this)">コピー</button>
+    </div>
+    <textarea id="sh1" readonly spellcheck="false">git add .
+git commit -m "update"
+git push origin main</textarea>
+  </section>
+
+  <section class="card">
+    <div class="head">
+      <h2>HTML</h2>
+      <button onclick="copyText('html1', this)">コピー</button>
+    </div>
+    <textarea id="html1" readonly spellcheck="false"><section class="hero">
+  <h1>Hello</h1>
+  <p>sample text</p>
+</section></textarea>
+  </section>
+
+  <script>
+    async function copyText(id, button) {
+      const el = document.getElementById(id);
+      try {
+        await navigator.clipboard.writeText(el.value);
+        const old = button.textContent;
+        button.textContent = "コピー済み";
+        setTimeout(() => button.textContent = old, 1200);
+      } catch (e) {
+        el.focus();
+        el.select();
+      }
+    }
+  </script>
+</body>
+</html>
